@@ -1,19 +1,35 @@
-## Esercitazione 1
-Clonare il codice sul proprio IDE e modificare i seguenti file:
+## Esercitazione 5
 
-1. EquazioneSecondoGradoModificabileConRisolutore.java
-2. EquazioneSecondoGradoModificabileConRisolutoreTest.java
-3. EquazioniModificabiliTextualFrontEnd.java
+### Esercitazione sull'uso delle Collections della Java SE, in particolare Set e SortedSet
 
-Nel caso 1 Implementare i metodi della classe come indicato dalle API in formato javadoc. I punti da modificare sono indicati con la stringa "// TODO implementare"
+#### Aule, Set e SortedSet
 
-Nel caso 2 scrivere i test JUnit per i metodi indicati, cioè sostituire ogni riga "// TODO "fail("Test non implementato");"  con il codice opportuno per testare il metodo corrispondente della classe EquazioneSecondoGradoModificabileConRisolutore. Si devono testare tutte le funzionalità indicate nelle API pubbliche dei metodi della classe, compreso il lancio delle eccezioni.
+Scaricare il codice associato dal link sottostante e riconsiderare il proprio
+codice della Esercitazione a casa N 4.
 
-Nel caso 3 fare il debug e modificare il codice in modo che non vada in loop se l'inserimento del parametro a o degli altri parametri richiede almeno una retry.
+1) Modificare la classe Aula come segue:
 
-Indicare con i commenti /* ... */ o // ... DOVE è stato modificato il file originale e perché.
+- cambiare il tipo della variabile istanza facilities da Facility[] a
+  Set<Facility>
+- cambiare il tipo della variabile istanza prenotazioni da Prenotazione[] a
+  SortedSet<Prenotazione>
+- riadattare tutti gli altri metodi di conseguenza (si veda il template e le
+  API della classe aggiornati), utilizzando le API delle due interface Set<E>
+  e SortedSet<E>; in particolare reimplementare il metodo isFree() sfruttando
+  l'ordinamento naturale tra le prenotazioni per farlo in maniera efficiente
+- implementare il nuovo metodo boolean removePrenotazione(Prenotazione p)
+- implementare il nuovo metodo boolean removePrenotazioniBefore(
+  GregorianCalendar timePoint) sfruttando l'ordinamento naturale tra le
+  prenotazioni per farlo in maniera efficiente
+
+La classe di test JUnit per Aula contiene i test aggiornati.
+
+2) Implementare la classe GestoreAule di cui è dato il template e una classe
+   di test JUnit. Sostituire cioè le parti "//TODO implementare ..." con il
+   codice opportuno
 
 ## Consegna
 
-Si possono fare più commit e push sul proprio repository. Dopo la prima push l'esercitazione viene considerata consegnata.
+Si possono fare più commit e push sul proprio repository. Dopo la prima push
+l'esercitazione viene considerata consegnata.
 L'ultima push viene considerata la versione finale.
